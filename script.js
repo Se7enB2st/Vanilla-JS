@@ -39,6 +39,30 @@ var todosList = {
     todo.completed = !todo.completed;
     this.displayTodos();
   },
+
+  toggleAll: function () {
+    var totalTodos = this.todos.length;
+    var completedTodos = 0;
+    // Get number of completed todos
+    for (var i = 0; i < totalTodos; i++) {
+      if (this.todos[i].completed === true) {
+        completedTodos++;
+      }
+    }
+    // If everything is true, make everything false
+    if (completedTodos === totalTodos) {
+      //Make everything false
+      for (var i = 0; i < totalTodos; i++) {
+        this.todos[i].completed === false;
+      }
+      // Otherwise, make everything true
+    } else {
+      for (var i = 0; i < totalTodos; i++) {
+        this.todos[i].completed === true;
+      }
+    }
+    this.displayTodos();
+  }
 };
 
 todosList.addTodo('Eat');
@@ -46,3 +70,5 @@ todosList.addTodo('Sleep');
 todosList.addTodo('Code');
 
 todosList.toggleCompleted(0);
+
+todosList.toggleAll();
