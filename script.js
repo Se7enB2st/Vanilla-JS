@@ -8,9 +8,9 @@ var todosList = {
       for (var i = 0; i < this.todos.length; i++) {
         console.log(this.todos[i].todoText);
         if (this.todos[i].completed === true) {
-            console.log('(x)', this.todos[i].todoText);
+          console.log('(x)', this.todos[i].todoText);
         } else {
-            console.log('( )', this.todos[i].todoText);
+          console.log('( )', this.todos[i].todoText);
         }
       }
     }
@@ -53,22 +53,25 @@ var todosList = {
     if (completedTodos === totalTodos) {
       //Make everything false
       for (var i = 0; i < totalTodos; i++) {
-        this.todos[i].completed === false;
+        this.todos[i].completed = false;
       }
       // Otherwise, make everything true
     } else {
       for (var i = 0; i < totalTodos; i++) {
-        this.todos[i].completed === true;
+        this.todos[i].completed = true;
       }
     }
     this.displayTodos();
   }
 };
 
-todosList.addTodo('Eat');
-todosList.addTodo('Sleep');
-todosList.addTodo('Code');
+var displayTodosButton = document.getElementById('displayTodosButton');
+var toggleAllButton = document.getElementById('toggleAllButton');
 
-todosList.toggleCompleted(0);
+displayTodosButton.addEventListener('click', function() {
+  todosList.displayTodos();
+});
 
-todosList.toggleAll();
+toggleAllButton.addEventListener('click', function() {
+  todosList.toggleAll();
+});
