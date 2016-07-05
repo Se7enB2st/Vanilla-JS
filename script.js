@@ -8,9 +8,9 @@ var todosList = {
       for (var i = 0; i < this.todos.length; i++) {
         console.log(this.todos[i].todoText);
         if (this.todos[i].completed === true) {
-          console.log('(x)', this.todos[i].todoText);
+            console.log('(x)', this.todos[i].todoText);
         } else {
-          console.log('( )', this.todos[i].todoText);
+            console.log('( )', this.todos[i].todoText);
         }
       }
     }
@@ -41,6 +41,7 @@ var todosList = {
   },
 
   toggleAll: function () {
+    debugger;
     var totalTodos = this.todos.length;
     var completedTodos = 0;
     // Get number of completed todos
@@ -82,5 +83,10 @@ var handlers = {
   },
   toggleAll: function () {
     todosList.toggleAll();
+  },
+  addTodo: function () {
+    var addTodoTextInput = document.getElementById('addTodoTextInput');
+    todosList.addTodo(addTodoTextInput.value);
+    addTodoTextInput.value = ' ';
   }
 };
