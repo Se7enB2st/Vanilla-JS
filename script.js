@@ -8,9 +8,9 @@ var todosList = {
       for (var i = 0; i < this.todos.length; i++) {
         console.log(this.todos[i].todoText);
         if (this.todos[i].completed === true) {
-          console.log('(x)', this.todos[i].todoText);
+            console.log('(x)', this.todos[i].todoText);
         } else {
-          console.log('( )', this.todos[i].todoText);
+            console.log('( )', this.todos[i].todoText);
         }
       }
     }
@@ -95,5 +95,10 @@ var handlers = {
     todosList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
     changeTodoPositionInput.value = '';
     changeTodoTextInput.value = '';
+  },
+  deleteTodo: function () {
+    var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
+    todosList.deleteTodo(deleteTodoPositionInput.valueAsNumber)
+    deleteTodoPositionInput.value = '';
   }
 };
