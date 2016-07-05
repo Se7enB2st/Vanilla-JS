@@ -65,13 +65,22 @@ var todosList = {
   }
 };
 
-var displayTodosButton = document.getElementById('displayTodosButton');
-var toggleAllButton = document.getElementById('toggleAllButton');
+// var displayTodosButton = document.getElementById('displayTodosButton');
+// var toggleAllButton = document.getElementById('toggleAllButton');
 
-displayTodosButton.addEventListener('click', function() {
-  todosList.displayTodos();
-});
+// displayTodosButton.addEventListener('click', function() {
+//  todosList.displayTodos();
+// });
 
-toggleAllButton.addEventListener('click', function() {
-  todosList.toggleAll();
-});
+// toggleAllButton.addEventListener('click', function() {
+//  todosList.toggleAll();
+// });
+
+var handlers = {
+  displayTodos: function () {
+    todosList.displayTodos();
+  },
+  toggleAll: function () {
+    todosList.toggleAll();
+  }
+};
