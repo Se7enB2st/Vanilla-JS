@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <link rel="stylesheet" href="style.css">
-  </head>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <body>
-    <h1>Todolist</h1>
-    <div>
+<body>
+  <h1>Todolist</h1>
+  <div>
     <button onclick="handlers.displayTodos()">Display Todolist</button>
     <button onclick="handlers.toggleAll()">Toggle All</button>
-    </div>
-    <br />
+  </div>
+  <br />
 
-    <div>
-    <button onclick="handlers.addTodo()">Add</button>
+  <div>
+    <button onclick="handlers.addTodo()">Add Item</button>
     <input id="addTodoTextInput" type='text'>
-    </div>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <div>
+    <button onclick="handlers.changeTodo()">Change Item</button>
+    <input id="changeTodoPositionInput" type="number">
+    <input id="changeTodoTextInput" type="text">
+  </div>
+
+  <script src="script.js"></script>
+</body>
 
 </html>

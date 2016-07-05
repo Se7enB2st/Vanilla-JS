@@ -1,1 +1,1 @@
-Practice Javascript by creating an App using Vanilla JS.
+Practice Javascript by creating an TodoMVC Application using Vanilla-JS.
