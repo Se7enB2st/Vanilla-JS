@@ -101,8 +101,18 @@ var view = {
     var todosUI = document.querySelector('ul');
     todosUI.innerHTML = '';
     for (var i = 0; i < todosList.todos.length; i++) {
-      var todoLI = document.createElement('li');
-      todosUI.appendChild(todoLI);
+      var todoLi = document.createElement('li');
+      var todo = todosList.todos[i];
+      var todoTextWithCompletion = '';
+
+      if(todo.completed === true) {
+        todoTextWithCompletion = '(x)' + todo.todoText;
+      } else {
+        todoTextWithCompletion = '( )' + todo.todoText;
+      }
+
+      todoLi.textContent = todoTextWithCompletion;
+      todosUI.appendChild(todoLi);
     }
   }
 };
