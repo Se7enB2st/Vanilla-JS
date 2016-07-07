@@ -65,17 +65,6 @@ var todosList = {
   }
 };
 
-// var displayTodosButton = document.getElementById('displayTodosButton');
-// var toggleAllButton = document.getElementById('toggleAllButton');
-
-// displayTodosButton.addEventListener('click', function() {
-//  todosList.displayTodos();
-// });
-
-// toggleAllButton.addEventListener('click', function() {
-//  todosList.toggleAll();
-// });
-
 var handlers = {
   displayTodos: function () {
     todosList.displayTodos();
@@ -104,5 +93,16 @@ var handlers = {
   },
   toggleAll: function () {
     todosList.toggleAll();
+  }
+};
+
+var view = {
+  displayTodos: function () {
+    var todosUI = document.querySelector('ul');
+    todosUI.innerHTML = '';
+    for (var i = 0; i < todosList.todos.length; i++) {
+      var todoLI = document.createElement('li');
+      todosUI.appendChild(todoLI);
+    }
   }
 };
